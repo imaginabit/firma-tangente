@@ -1,0 +1,78 @@
+
+<div>
+  <div>
+    <label for='nombre'>Nombre y apellidos</label>
+    <input name='nombre' type='text' ng-model='nombre'  placeholder="Escribe tu nombre">
+  </div>
+  <div>
+    <label for='cargo'>  Cargo y/o especialidad</label>
+    <input name='cargo' type='text' ng-model='cargo'  placeholder="Escribe tu cargo">
+  </div>
+  <div>
+    <label for='telefono'> Telefono</label>
+    <input name='telefono' type='text' ng-model='telefono'  placeholder="Escribe tu telefono">
+  </div>
+  <div>
+    <label for='telefono'> Nombre Equipo </label>
+    <input name='telefono' type='text' ng-model='nombreEquipo'  placeholder="Escribe equipo">
+  </div>
+
+
+  <select ng-model="equipo">
+    <option
+    ng-repeat="item in  arrNombres"
+    value="{{$index }}">
+    {{item}}
+  </option>
+</select>
+
+
+</div>
+
+<div style="height:30px">
+
+</div>
+<!-- Rellena los datos falsos entre las etiquetas de html con los que correspondan en cada caso -->
+<div id="firma" ng-click="selectText('firma')">
+ <table border="0" width="700" >
+  <tr style="color:#000; font-size: 17px; font-family: tahoma, hevietica, sans;" height="110" >
+    <td><br />
+      <span >
+        {{  nombre }}
+      </span><br>
+      <span style="color: #97999C;font-size: 15px;margin-top: 7px;display: block;">
+        {{ cargo }}
+      </span><br /><br />
+      <span style="color:#000; font-size: 13px;" >
+
+        {{ nombreEquipo || arrNombres[equipo]  }}
+        {{}}</span><br />
+      <!-- poner entre las comillas después de 'href=' la url completa (con http://) del sitio web. Después de 'title='poner entre comillas el nombre del equipo -->
+      <a style="color: #97999C;font-size: 12px;margin-top: 7px;display: block;text-decoration:none" href="{{arrUrls[equipo]}}" title=" {{ arrNombres[equipo]  }}" target="_blank" style="text-decoration: none;"> {{arrUrls[equipo]}}</a>
+      <p style="color:#97999C; font-size: 11px;">Tlf: {{ telefono }}<br >
+      </p><br />
+    </td>
+  </td>
+  <td align="right">
+    <!-- Cambiar después de 'href=' la url completa (con http:// y entre las comillas) del sitio web. Pegar después de de 'img src=' (siempre entre las comillas) la url de la imagen del logo de tu equipo, ya sea de tu web u otra previamente subida. Tamaño recomendado: ancho de 250 píxeles. Escribir después de la 'alt=' y entre comillas el nombre del equipo --><a href="{{arrUrls[equipo]}}" title="logo" target="_blank" style="text-decoration: none;"><img style="width:250px" src="{{baseurl}}images/{{ arrlogos[equipo]  }}  " title="  {{ arrNombres[equipo]  }}" alt="{{ arrNombres[equipo]  }}"></a></td>
+  </tr>
+</table>
+<table border="0" width="700" style="border-top: 2px solid #78b74a; border-bottom: 2px solid #78b74a;">
+
+  <tr style="color:#000; font-size: 12px; font-family: tahoma, hevietica, sans;" height="110PX" width="500px">
+    <td>
+      <a href="http://www.tangente.coop" title="Grupo Cooperativo Tangente" target="_blank" style="text-decoration: none;">
+        <img src="{{baseurl}}images/logo.png" title="Tangente" alt="tangente"></a>
+      </td>
+    </td>
+    <td align="right">
+      Esta entidad pertenece al Grupo Cooperativo Tangente<br>
+      <a style="color: #78b74a;font-size: 10px;margin-top: 5px;display: block;text-decoration:none" href="http://www.tangente.coop" title="Grupo Cooperativo Tangente" target="_blank" style="text-decoration: none;">www.tangente.coop</a>
+    </td>
+  </tr>
+</table>
+</div>
+
+<div style="text-align:center;padding:2em">
+  {{ msg }}
+</div>

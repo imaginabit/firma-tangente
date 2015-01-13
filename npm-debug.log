@@ -1,0 +1,20 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/fer/.nvm/v0.10.35/bin/node',
+1 verbose cli   '/home/fer/.nvm/v0.10.35/bin/npm',
+1 verbose cli   'cache',
+1 verbose cli   'clean' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 error Error: EACCES, unlink '/home/fer/.npm/abbrev/1.0.5'
+4 error  { [Error: EACCES, unlink '/home/fer/.npm/abbrev/1.0.5'] errno: 3, code: 'EACCES', path: '/home/fer/.npm/abbrev/1.0.5' }
+5 error Please try running this command again as root/Administrator.
+6 error System Linux 3.8.11
+7 error command "/home/fer/.nvm/v0.10.35/bin/node" "/home/fer/.nvm/v0.10.35/bin/npm" "cache" "clean"
+8 error cwd /home/fer/Downloads/angular/tangente
+9 error node -v v0.10.35
+10 error npm -v 1.4.28
+11 error path /home/fer/.npm/abbrev/1.0.5
+12 error code EACCES
+13 error errno 3
+14 error stack Error: EACCES, unlink '/home/fer/.npm/abbrev/1.0.5'
+15 verbose exit [ 3, true ]
