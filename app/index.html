@@ -24,9 +24,10 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#/">General</a></li>
-          <li><a ng-href="#/firmaSubmarca">Submarcas</a></li>
-          <li><a ng-href="#/firmaEquipo">Equipo</a></li>
+          <li ng-class="{active: activetab=='/'}"><a ng-href="#/">General</a></li>
+          <li ng-class="{active: activetab=='/firmaSubmarca'}"><a ng-href="#/firmaSubmarca">Submarcas</a></li>
+          <li ng-class="{active: activetab=='/firmaEquipo'}"><a ng-href="#/firmaEquipo">Equipos</a></li>
+          <li ng-class="{active: activetab=='/instruciones'}"><a ng-href="#/instruciones">Instrucciones</a></li>
         </ul>
         <h3 class="text-muted">Firmas Tangente</h3>
       </div>
@@ -80,6 +81,7 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/firmaequipo.js"></script>
         <script src="scripts/controllers/firmasubmarca.js"></script>
+        <script src="scripts/controllers/instruciones.js"></script>
         <!-- endbuild -->
 </body>
 </html>

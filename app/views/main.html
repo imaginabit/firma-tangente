@@ -1,26 +1,39 @@
+<script>      $("#htmlcont").hide();
+</script>
 
-<div>
-  <div>
-      <label for='nombre'>Nombre y apellidos</label>
-      <input name='nombre' type='text' ng-model='nombre'  placeholder="Escribe tu nombre">
+<form class="form-horizontal" >
+  <div class="form-group">
+    <label class="col-sm-4 control-label" for='nombre'>Nombre y apellidos</label>
+    <div class="col-sm-8">
+      <input class="form-control" name='nombre' type='text' ng-model='nombre'  placeholder="Escribe tu nombre">
+    </div>
+
   </div>
-  <div>
-    <label for='cargo'>  Cargo y/o especialidad</label>
-    <input name='cargo' type='text' ng-model='cargo'  placeholder="Escribe tu cargo">
+  <div class="form-group">
+    <label class="col-sm-4 control-label" for='cargo'>  Cargo y/o especialidad</label>
+    <div class="col-sm-8">
+
+    <input class="form-control" name='cargo' type='text' ng-model='cargo'  placeholder="Escribe tu cargo">
+    </div>
   </div>
-  <div>
-    <label for='telefono'> Telefono</label>
-    <input name='telefono' type='text' ng-model='telefono'  placeholder="Escribe tu telefono">
+  <div class="form-group">
+    <label class="col-sm-4 control-label" for='telefono'> Telefono</label> 
+        <div class="col-sm-8">
+
+    <input class="form-control" name='telefono' type='text' ng-model='telefono'  placeholder="Escribe tu telefono">
+    </div>
   </div>
+</form>
 
 
-</div>
+<div style="height:50px">
 
-<div style="height:30px">
+<button id='selFirma' ng-click="selectFirma()" class="btn btn-default" >
+  Seleccionar la firma
+</button>
+<button id='showHtml' ng-click="showHtml('firma')" class="btn btn-default" >Ver html</button></div>
 
-</div>
-
-<!-- Rellena los datos falsos entre las etiquetas de html con los que correspondan en cada caso -->
+<div id="firma" ng-click="selectText('firma')">
 <table border="0" width="700" style="border-top: 2px solid #78b74a; border-bottom: 2px solid #78b74a;"  >
 
   <tr style="color:#000; font-size: 17px; font-family: tahoma, hevietica, sans;" height="110PX" width="500px">
@@ -39,33 +52,18 @@
     </td>
   </td>
   <td align="right">
-    <a href="http://www.tangente.coop" title="Grupo Cooperativo Tangente" target="_blank" style="text-decoration: none;"><img src="http://imaginabit.com/logo230x69.png" title="Tangente" alt="tangente"></a></td>
+    <a href="http://www.tangente.coop" title="Grupo Cooperativo Tangente" target="_blank" style="text-decoration: none;"><img src="{{baseurl}}logo230x69.png" title="Tangente" alt="tangente"></a></td>
   </tr>
 </table>
-
-
-<!--
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+<div ng-click="selectText('html')" id="htmlcont" >
+    <label class="control-label" >HTML</label>
+    <div ng-click="selectText('html')" id="html" >
+    </div>
 </div>
--->
+
+
+<div style="text-align:center;padding:2em">
+  {{ msg }}
+</div>

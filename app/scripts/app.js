@@ -31,7 +31,18 @@ angular
         templateUrl: 'views/firmaequipo.html',
         controller: 'FirmaequipoCtrl'
       })
+      .when('/instruciones', {
+        templateUrl: 'views/instruciones.html',
+        controller: 'InstrucionesCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }).run(['$rootScope', '$location', function($rootScope, $location){
+   var path = function() { return $location.path();};
+   $rootScope.$watch(path, function(newVal, oldVal){
+     $rootScope.activetab = newVal;
+   });
+}])
+
+  ;

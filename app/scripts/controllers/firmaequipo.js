@@ -71,9 +71,17 @@ angular.module('tangenteApp')
     'http://www.laclaqueta.net/',
     'http://www.pandoramirabilia.net/'
     ];
-    $scope.baseurl = "/";
+
+    $scope.baseurl = "http://tangente.coop/firma/";
     $scope.msg = "";
 
+    $scope.selectFirma = function() {
+        if ($("#htmlcont2").css('display')=="none") {
+            $scope.selectText('firma2');
+        } else {
+            $scope.selectText('html2');
+        }
+    }
 
     $scope.selectText = function(element) {
       var doc = document;
@@ -92,6 +100,23 @@ angular.module('tangenteApp')
       }
       $scope.msg = "Pulsa Ctrl + C para copiar";
     }
+
+
+    $scope.showHtml = function(element) {
+      if ($("#showHtml2").html()=='Ver html') {
+        $("#showHtml2").html('Ver firma');
+      } else {
+         $("#showHtml2").html('Ver html');
+      }
+      $("#firma2").toggle();
+      $("#htmlcont2").toggle();
+      var firma = $("#firma2").html();
+      firma = $("<div />").text(firma).html();
+
+      $("#html2").html(firma);
+      $scope.msg = "Pulsa Ctrl + C para copiar";
+    }
+
 
 
   });
