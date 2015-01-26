@@ -72,11 +72,11 @@ angular.module('tangenteApp')
     'http://www.pandoramirabilia.net/'
     ];
 
-    $scope.baseurl = "http://tangente.coop/firma/";
-    $scope.msg = "";
+    $scope.baseurl = 'http://tangente.coop/firma/';
+    $scope.msg = '';
 
     $scope.selectFirma = function() {
-        if ($("#htmlcont2").css('display')=="none") {
+        if ($("#htmlcont2").css('display')==="none") {
             $scope.selectText('firma2');
         } else {
             $scope.selectText('html2');
@@ -103,7 +103,7 @@ angular.module('tangenteApp')
 
 
     $scope.showHtml = function(element) {
-      if ($("#showHtml2").html()=='Ver html') {
+      if ($("#showHtml2").html()==='Ver html') {
         $("#showHtml2").html('Ver firma');
       } else {
          $("#showHtml2").html('Ver html');
@@ -112,6 +112,7 @@ angular.module('tangenteApp')
       $("#htmlcont2").toggle();
       var firma = $("#firma2").html();
       firma = $("<div />").text(firma).html();
+      firma += ' <p>&nbsp;</p> ';
 
       $("#html2").html(firma);
       $scope.msg = "Pulsa Ctrl + C para copiar";

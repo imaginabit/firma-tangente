@@ -71,6 +71,7 @@ angular.module('tangenteApp')
       $("#htmlcont1").toggle();
       var firma = $("#firma1").html();
       firma = $("<div />").text(firma).html();
+      firma += ' <p>&nbsp;</p> ';
 
       $("#html1").html(firma);
 

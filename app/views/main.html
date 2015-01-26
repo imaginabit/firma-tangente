@@ -17,10 +17,18 @@
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-4 control-label" for='telefono'> Telefono</label> 
+    <label class="col-sm-4 control-label" for='telefono'> Tlf y otros datos de interés</label>
         <div class="col-sm-8">
-
     <input class="form-control" name='telefono' type='text' ng-model='telefono'  placeholder="Escribe tu telefono">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-4 control-label" for='custml'>Añadir enlaces personales </label>
+    <div class="col-sm-8">
+      <input class="form-control" name='custml' type='text' ng-model='custml'  placeholder="Escribe html">
+      <span style="color:#555;font-size:12px">
+        [FB, TW, Blog, etc.] (usar etiquetas html: &lt;a href="http://urlcompletadelenlace"&gt; palabra enlazada &lt;/a&gt;
+      </span>
     </div>
   </div>
 </form>
@@ -39,14 +47,15 @@
   <tr style="color:#000; font-size: 17px; font-family: tahoma, hevietica, sans;" height="110PX" width="500px">
     <td><br />
       <span >
-        {{ nombre }}
+        {{ nombre || 'Nombre Apellido' }}
       </span><br>
-      <div style="color: #97999C;font-size: 15px;margin-top: 7px;">
-        {{cargo}}
-      </div><br /><br />
-      <span style="color:#000; font-size: 13px;" >Grupo Cooperativo Tangente</span><br />
-      <a style="color: #97999C;font-size: 12px;margin-top: 7px;display: block;text-decoration:none" href="http://www.tangente.coop" title="Grupo Cooperativo Tangente" target="_blank" style="text-decoration: none;">www.tangente.coop</a>
-      <p style="color:#97999C; font-size: 11px;">Tlf: {{ telefono }}<br >
+      <div style="color: #97999C;font-size: 15px;margin-top: 2px;">
+        {{ cargo || 'Cargo o especalidad'  }}
+      </div>
+      <div style="color:#000; font-size: 13px;margin-top: 10px;" >Grupo Cooperativo Tangente</div>
+      <a style="color: #97999C;font-size: 12px;margin-top: 2px;display: block;text-decoration:none" href="http://www.tangente.coop" title="Grupo Cooperativo Tangente" target="_blank" style="text-decoration: none;">www.tangente.coop</a>
+      <p style="color:#97999C; font-size: 11px;">{{ telefono || '912 345 678 | 987 654 321'  }}<br >
+        <span ng-bind-html="custml"></span>
       </p><br />
 
     </td>
@@ -55,6 +64,15 @@
     <a href="http://www.tangente.coop" title="Grupo Cooperativo Tangente" target="_blank" style="text-decoration: none;"><img src="{{baseurl}}logo230x69.png" title="Tangente" alt="tangente"></a></td>
   </tr>
 </table>
+<span style="color:#ccc;font-size:9px">
+<br>
+<p>
+  De acuerdo con lo establecido por la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal (LOPD), le informamos que sus datosestán incorporados en un fichero del que es titular Grupo Tangente S.Coop.Mad con la finalidad de realizar la gestión administrativa, contable y fiscal, así como enviarle comunicaciones comerciales sobre nuestros productos y/o servicios que puedan ser de su interés.
+</p>
+<p>
+  Asimismo, le informamos de la posibilidad de ejercer los derechos de acceso, rectificación, cancelación y oposición de sus datos en el domicilio fiscal de Grupo Tangente S.Coop.Mad sito en C/ Divino Valles, Nº 26 28045 - Madrid - MADRID - contacto@tangente.coop
+</p>
+</span>
 </div>
 
 <div ng-click="selectText('html')" id="htmlcont" >
@@ -62,7 +80,6 @@
     <div ng-click="selectText('html')" id="html" >
     </div>
 </div>
-
 
 <div style="text-align:center;padding:2em">
   {{ msg }}

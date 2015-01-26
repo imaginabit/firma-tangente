@@ -25,6 +25,7 @@
     "grunt-wiredep": "^1.7.0",
     "jshint-stylish": "^0.2.0",
     "load-grunt-tasks": "^0.4.0",
+    "node-webkit-builder": "^1.0.6",
     "time-grunt": "^0.3.1"
   },
   "engines": {
@@ -32,5 +33,20 @@
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "main": "./dist/index.html",
+  "window": {
+    "toolbar": false,
+    "resizable": false,
+    "width": 860,
+    "height": 800
+  },
+  "nodewebkit": {
+    "options": {
+      "files": ["dist/*", "!test", "!app/images"],
+      "platforms": "linux32",
+      "buildType": "versioned"
+    },
+    "src": "./app/**/*"
   }
 }

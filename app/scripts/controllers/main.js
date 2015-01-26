@@ -14,7 +14,7 @@ angular.module('tangenteApp')
       'AngularJS',
       'Karma'
     ];
-    
+
     $scope.selectText = function(element) {
       var doc = document;
       var text = doc.getElementById(element);
@@ -42,7 +42,7 @@ angular.module('tangenteApp')
             $scope.selectText('firma');
         } else {
             $scope.selectText('html');
-        }    
+        }
     }
 
     $scope.selectText = function(element) {
@@ -74,6 +74,7 @@ angular.module('tangenteApp')
       $("#htmlcont").toggle();
       var firma = $("#firma").html();
       firma = $("<div />").text(firma).html();
+      firma += ' <p>&nbsp;</p> ';
 
       $("#html").html(firma);
 
