@@ -68,13 +68,14 @@
     <p>{{ nombre || 'Nombre Apellido' }}
       <br>
       <span style="color: #97999C;font-size: 15px;margin-top: 1px">
-        {{ cargo || 'Cargo o especalidad'  }}</span></p>
+        {{ cargo || ' Cargo y/o especialidad'  }}</span></p>
       <span style="color:#000; font-size: 13px;" >
         {{ nombreEquipo || arrNombres[equipo] || 'Equipo' }}
         </span><br>
       <a style="color: #97999C;font-size: 12px;margin-top: 7px;display: block;text-decoration:none" href="{{arrUrls[equipo]}}" title=" {{ arrNombres[equipo]  }}" target="_blank" style="text-decoration: none;"> {{arrUrls[equipo]}}</a>
       <p style="color:#97999C; font-size: 11px;">{{ telefono || '912 345 678 | 987 654 321'  }}<br >
       <span ng-bind-html="custml"></span>
+
       </p><br></td></td><td align="right">
  <a href="{{arrUrls[equipo]}}" title="logo" target="_blank" style="text-decoration: none;"><img style="width:250px" src="{{baseurl}}images/{{ arrlogos[equipo]  }}  " title="  {{ arrNombres[equipo]  }}" alt="{{ arrNombres[equipo]  }}"></a></td>
   </tr></table><table border="0" width="700" style="border-top: 2px solid #78b74a; border-bottom: 2px solid #78b74a;">
