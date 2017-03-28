@@ -41,6 +41,7 @@ angular
   }).run(['$rootScope', '$location', function($rootScope, $location){
    var path = function() { return $location.path();};
    $rootScope.$watch(path, function(newVal, oldVal){
+     console.log(oldVal);
      $rootScope.activetab = newVal;
    });
 }])

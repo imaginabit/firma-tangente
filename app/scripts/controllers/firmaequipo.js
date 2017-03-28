@@ -76,48 +76,48 @@ angular.module('tangenteApp')
     $scope.msg = '';
 
     $scope.selectFirma = function() {
-        if ($("#htmlcont2").css('display')==="none") {
+        if ($('#htmlcont2').css('display')==='none') {
             $scope.selectText('firma2');
         } else {
             $scope.selectText('html2');
         }
-    }
+    };
 
     $scope.selectText = function(element) {
       var doc = document;
       var text = doc.getElementById(element);
+      var range;
 
       if (doc.body.createTextRange) { // ms
-        var range = doc.body.createTextRange();
+        range = doc.body.createTextRange();
         range.moveToElementText(text);
         range.select();
       } else if (window.getSelection) { // moz, opera, webkit
         var selection = window.getSelection();
-        var range = doc.createRange();
+        range = doc.createRange();
         range.selectNodeContents(text);
         selection.removeAllRanges();
         selection.addRange(range);
       }
-      $scope.msg = "Pulsa Ctrl + C para copiar";
-    }
+      $scope.msg = 'Pulsa Ctrl + C para copiar';
+    };
 
 
     $scope.showHtml = function(element) {
-      if ($("#showHtml2").html()==='Ver html') {
-        $("#showHtml2").html('Ver firma');
+      console.log(element);
+      if ($('#showHtml2').html()==='Ver html') {
+        $('#showHtml2').html('Ver firma');
       } else {
-         $("#showHtml2").html('Ver html');
+         $('#showHtml2').html('Ver html');
       }
-      $("#firma2").toggle();
-      $("#htmlcont2").toggle();
-      var firma = $("#firma2").html();
-      firma = $("<div />").text(firma).html();
+      $('#firma2').toggle();
+      $('#htmlcont2').toggle();
+      var firma = $('#firma2').html();
+      firma = $('<div />').text(firma).html();
       firma += ' <p>&nbsp;</p> ';
 
-      $("#html2").html(firma);
-      $scope.msg = "Pulsa Ctrl + C para copiar";
-    }
-
-
+      $('#html2').html(firma);
+      $scope.msg = 'Pulsa Ctrl + C para copiar';
+    };
 
   });
