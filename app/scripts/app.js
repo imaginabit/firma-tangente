@@ -46,10 +46,8 @@ angular
       $rootScope.activetab = newVal;
     });
   }]).run(function($rootScope,$parse) {
-    //$rootScope.baseurl = 'http://dev.agresta.org/firma/';
-    $rootScope.baseurl = 'http://localhost:9000/';
+    $rootScope.baseurl = 'https://tangente.coop/firma/';
     $rootScope.pie = 'views/pie.html';
-    $rootScope.testLoco = 'loquisimo';
 
     $rootScope.showHtml = function(element) {
       console.log(element);
