@@ -8,7 +8,9 @@
  * Controller of the tangenteApp
  */
 angular.module('tangenteApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, $rootScope) {
+
+    $rootScope.loaded = 'cargado';
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

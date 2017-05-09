@@ -8,12 +8,13 @@
  * Controller of the tangenteApp
  */
 angular.module('tangenteApp')
-  .controller('FirmaequipoCtrl', function ($scope) {
+  .controller('FirmaequipoCtrl', function ($scope, $rootScope,$parse) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+    $rootScope.main = 'loaded';
     $scope.arrNombres = [
      'acais',
      'ALTEKIO' ,
@@ -72,8 +73,8 @@ angular.module('tangenteApp')
     'http://www.pandoramirabilia.net/'
     ];
 
-    $scope.baseurl = 'http://tangente.coop/firma/';
-    $scope.msg = '';
+    // $scope.baseurl = 'http://tangente.coop/firma/';
+    // $scope.msg = '';
 
     $scope.selectFirma = function() {
         if ($('#htmlcont2').css('display')==='none') {
@@ -119,5 +120,36 @@ angular.module('tangenteApp')
       $('#html2').html(firma);
       $scope.msg = 'Pulsa Ctrl + C para copiar';
     };
+
+    $scope.$watch('equipo', function(newVal, oldVal) {
+      console.log('oldVal',oldVal);
+      console.log('new ',newVal);
+
+      $('img.base64').each(function() {
+        console.log('convertir a base64');
+        //var imgurl = $(this).attr('data-img') ;
+        var imgurl = this.attributes['data-img'].value;// .attr('data-img') ;
+        console.log('img url',imgurl);
+        // console.log('img url value',imgurl.value);
+        // console.log('img url value parse ', $parse ( imgurl.value )($rootScope));
+        imgurl = $parse ( imgurl )($rootScope,$scope);
+        console.log('parsed imgurl',imgurl);
+        var este = $(this);
+
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function() {
+          var reader = new FileReader();
+          reader.onloadend = function() {
+            console.log('load end');
+            este.attr('src', reader.result);
+          };
+          reader.readAsDataURL(xhr.response);
+        };
+        xhr.open('GET', imgurl );
+        xhr.responseType = 'blob';
+        xhr.send();
+      });
+
+    });
 
   });

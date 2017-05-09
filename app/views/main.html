@@ -1,3 +1,4 @@
+<span data-ng-init="init()">
 <form class="form-horizontal" >
   <div class="form-group">
     <label class="col-sm-4 control-label" for='nombre'>Nombre y apellidos</label>
@@ -58,18 +59,17 @@
     </td>
   </td>
   <td align="right">
-    <a href="http://www.tangente.coop" title="Grupo Cooperativo Tangente" target="_blank" style="text-decoration: none;"><img src="{{baseurl}}logo230x69.png" title="Tangente" alt="tangente"></a></td>
+    <a href="http://www.tangente.coop" title="Grupo Cooperativo Tangente" target="_blank" style="text-decoration: none;">
+      <!-- <img src="{{baseurl}}logo230x69.png" title="Tangente" alt="tangente" >
+
+      <img src="./logo230x69.png{{ data64Img[0] }}" title="Tangente" alt="tangente" >
+      base64: -->
+      <img data-img="./images/logo230x69.png" class="base64" title="Tangente" alt="tangente" >
+
+    </a></td>
   </tr>
 </table>
-<span style="color:#ccc;font-size:9px">
-<br>
- <p>
-  De acuerdo con lo establecido por la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal (LOPD), le informamos que sus datos están incorporados en un fichero del que es titular Grupo Tangente S.Coop.Mad con la finalidad de realizar la gestión administrativa, contable y fiscal, así como enviarle comunicaciones comerciales sobre nuestros productos y/o servicios que puedan ser de su interés.
-</p>
-  <p>
-  Asimismo, le informamos de la posibilidad de ejercer los derechos de acceso, rectificación, cancelación y oposición de sus datos en el domicilio fiscal de Grupo Tangente S.Coop.Mad sito en Paseo de las Acacias, 3, 1º A. 28005 - Madrid - MADRID - contacto@tangente.coop"
-  </p>
-</span>
+  <span ng-include="pie"></span>
 </div>
 
 <div ng-click="selectText('html')" id="htmlcont" >
@@ -81,6 +81,4 @@
 <div style="text-align:center;padding:2em">
   {{ msg }}
 </div>
-<script type="text/javascript">
-$("#htmlcont").hide();
-</script>
+</span>
