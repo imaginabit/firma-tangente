@@ -76,27 +76,27 @@ angular
     $rootScope.init = function() {
       console.log('init called');
       $('img.base64').each(function() {
-        console.log('convertir a base64');
-        //var imgurl = $(this).attr('data-img') ;
         var imgurl = this.attributes['data-img'].value;// .attr('data-img') ;
-        console.log('img url',imgurl);
-        // console.log('img url value',imgurl.value);
-        // console.log('img url value parse ', $parse ( imgurl.value )($rootScope));
-        imgurl = $parse ( imgurl )($rootScope);
-        var este = $(this);
+        if ($rootScope.base64 === true){
+          console.log('convertir a base64');
+          imgurl = $parse ( imgurl )($rootScope);
+          var este = $(this);
 
-        var xhr = new XMLHttpRequest();
-        xhr.onload = function() {
-          var reader = new FileReader();
-          reader.onloadend = function() {
-            console.log('load end');
-            este.attr('src', reader.result);
+          var xhr = new XMLHttpRequest();
+          xhr.onload = function() {
+            var reader = new FileReader();
+            reader.onloadend = function() {
+              console.log('load end');
+              este.attr('src', reader.result);
+            };
+            reader.readAsDataURL(xhr.response);
           };
-          reader.readAsDataURL(xhr.response);
-        };
-        xhr.open('GET', imgurl );
-        xhr.responseType = 'blob';
-        xhr.send();
+          xhr.open('GET', imgurl );
+          xhr.responseType = 'blob';
+          xhr.send();
+        } else {
+          //this.removeAttribute('data-img');
+        }
       });
     };
   });

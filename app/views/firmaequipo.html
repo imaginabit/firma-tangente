@@ -79,7 +79,7 @@
  <a href="{{arrUrls[equipo]}}" title="logo" target="_blank" style="text-decoration: none;">
    <img class="base64"
     data-img="baseurl + 'images/' + arrlogos[equipo]"
-    style="width:250px" src="" title="  {{ arrNombres[equipo]  }}" alt="{{ arrNombres[equipo]  }}"></a>
+    style="width:250px" src="{{baseurl + 'images/' + arrlogos[equipo]}}" title="  {{ arrNombres[equipo]  }}" alt="{{ arrNombres[equipo]  }}"></a>
   </td>
 
   </tr></table><table border="0" width="700" style="border-top: 2px solid #78b74a; border-bottom: 2px solid #78b74a;">
@@ -87,7 +87,7 @@
     <td><a href="http://www.tangente.coop" title="Grupo Cooperativo Tangente" target="_blank" style="text-decoration: none;">
         <img class="base64"
         data-img=" baseurl + 'images/logo.png'"
-        src="" title="Tangente" alt="tangente"></a>
+        src="{{ baseurl + 'images/logo.png'}}" title="Tangente" alt="tangente"></a>
     </td>
     <td align="right">
       Esta entidad pertenece al Grupo Cooperativo Tangente<br>

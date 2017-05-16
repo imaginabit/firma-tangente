@@ -36,7 +36,7 @@ angular.module('tangenteApp')
       $scope.msg = 'Pulsa Ctrl + C para copiar';
     };
 
-    $scope.baseurl = 'http://imaginabit.com/';
+    // $scope.baseurl = 'http://imaginabit.com/';
     $scope.msg = '';
 
 
