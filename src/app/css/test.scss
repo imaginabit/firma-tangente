@@ -1,0 +1,22 @@
+.tal{
+    border: red;
+    .cual{
+        border: 10px;
+    }
+}
+* { background-color: rgba(255,255,100,0.3); }
+* * { background-color: rgba(255,255,100,0.3); }
+* * * { background-color: rgba(255,255,100,0.3); }
+* * * * { background-color: rgba(255,255,100,0.3); }
+* * * * * { background-color: rgba(255,255,100,0.3); }
+* * * * * * { background-color: rgba(255,255,100,0.3); }
+
+
+
+// .nav-pills li.active a,
+// .nav-pills li.active a:focus,
+// .nav-pills li a:hover {
+//     background-color: #ggg;
+// }
+
+

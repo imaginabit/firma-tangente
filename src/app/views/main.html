@@ -37,9 +37,9 @@
 <button id='selFirma' ng-click="selectFirma()" class="btn btn-default" >
   Seleccionar la firma
 </button>
-<button id='showHtml' ng-click="showHtml('firma')" class="btn btn-default" >Ver html</button></div>
+<button id='showHtml' ng-click="$root.showHtml('firma')" class="btn btn-default" >Ver html</button></div>
 
-<div id="firma" ng-click="selectText('firma')">
+<div id="firma" ng-click="$root.selectText('firma')">
 <table border="0" width="700" style="border-top: 2px solid #78b74a; border-bottom: 2px solid #78b74a;"  >
 
   <tr style="color:#000; font-size: 17px; font-family: tahoma, hevietica, sans;" height="110PX" width="500px">
@@ -69,14 +69,10 @@
     </a></td>
   </tr>
 </table>
-  <span ng-include="pie"></span>
+  <span ng-include="$root.pie"></span>
 </div>
 
-<div ng-click="selectText('html')" id="htmlcont" >
-    <label class="control-label" >HTML</label>
-    <div ng-click="selectText('html')" id="html" >
-    </div>
-</div>
+<ng-include src="'/views/htmlbox.html'" ></ng-include>
 
 <div style="text-align:center;padding:2em">
   {{ msg }}
