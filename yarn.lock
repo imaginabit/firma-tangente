@@ -288,10 +288,10 @@ angular-sanitize@^1.7.8:
   resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.7.8.tgz#87d59f754bb18d286dfd9d6ce867299c094c6719"
   integrity sha512-sVq51is1cVNiPytH4JIEd7iRW0OBIRQGNETWkz1c/jnLv2sBf9oDxEd8enwDz/W2ULBIpqJPK/3AsIxmZyh9pA==
 
-angular-touch@^1.7.8:
-  version "1.7.8"
-  resolved "https://registry.yarnpkg.com/angular-touch/-/angular-touch-1.7.8.tgz#f779331c2248232510214471c7fb4c7679312ce6"
-  integrity sha512-YCpirIDueMIRJfSZg0glzqTfr3HyGx0/DeZorN3TkFelYj0YwxvwldQm2NcqpQR3SNfEj7ZbkcrXl1ekTILQOw==
+angular-touch@^1.7.9:
+  version "1.7.9"
+  resolved "https://registry.yarnpkg.com/angular-touch/-/angular-touch-1.7.9.tgz#a85375407f9f2fb20442cb3ded48937c558d9267"
+  integrity sha512-qNKWUnecfah4mZxG7GM96AemhXyOVcE03kg3SrWExfmyO/hQNPE50Qqyszb+1UE8GO7WiWOYn1Y5wn9CtOInqA==
 
 angular@^1.7.9:
   version "1.7.9"
