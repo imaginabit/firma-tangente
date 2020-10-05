@@ -282,10 +282,10 @@ angular-route@^1.7.8:
   resolved "https://registry.yarnpkg.com/angular-route/-/angular-route-1.7.8.tgz#d502aa605dcbb253a93e844c0adf51c9bc36b9fa"
   integrity sha512-VVk89PH0fsY5kfbx+N7IVX1IwnaPWYhMGY0uA+rjej2v1sjvrTx1SLkxUK4E0UpW1hXeLJhN7ncBcwoBiPtAtA==
 
-angular-sanitize@^1.7.8:
-  version "1.7.8"
-  resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.7.8.tgz#87d59f754bb18d286dfd9d6ce867299c094c6719"
-  integrity sha512-sVq51is1cVNiPytH4JIEd7iRW0OBIRQGNETWkz1c/jnLv2sBf9oDxEd8enwDz/W2ULBIpqJPK/3AsIxmZyh9pA==
+angular-sanitize@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.8.1.tgz#80e24614669cf3d252d199e199680f4c9dee5505"
+  integrity sha512-kDtbAQkN+biyvBMJ8mgFIDZureng5yl6qegFCQ+bUw50n3KOx4FCsZ9S5tNAQ/rjYYTC5tP4hREv7+2ha+8M2w==
 
 angular-touch@^1.7.9:
   version "1.7.9"
