@@ -27,7 +27,7 @@
     "url-loader": "^2.1.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.8",
-    "webpack-dev-server": "^3.8.0",
+    "webpack-dev-server": "^3.11.2",
     "webpack-icons-installer": "^2.0.0"
   },
   "scripts": {
